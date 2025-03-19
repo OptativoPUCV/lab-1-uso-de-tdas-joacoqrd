@@ -42,3 +42,17 @@ exercises.c:47:9: error: unused variable 'elem' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 0869ae1
+Wed, Mar 19, 2025  9:00:20 AM: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:0:
+exercises.c: In function 'crea_lista':
+exercises.c:51:20: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+       int *valor = i + 1;
+                    ^
+exercises.c:47:9: error: unused variable 'elem' [-Werror=unused-variable]
+    int *elem; //puntero a los elementos que guardaremos
+         ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+ed78e35
