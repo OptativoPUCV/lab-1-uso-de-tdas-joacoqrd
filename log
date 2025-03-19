@@ -2,3 +2,23 @@ Wed, Mar 19, 2025  8:45:11 AM:
  tests:  0|5
 total_score: 0/70
 3f6cb15
+Wed, Mar 19, 2025  8:58:02 AM: 
+ exercises.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+In file included from test.c:5:0:
+exercises.c: In function 'crea_lista':
+exercises.c:51:19: error: passing argument 2 of 'pushBack' makes pointer from integer without a cast [-Werror=int-conversion]
+       pushBack(L, i);
+                   ^
+In file included from exercises.c:6:0,
+                 from test.c:5:
+arraylist.h:20:6: note: expected 'void *' but argument is of type 'int'
+ void pushBack(List *L, void *dato);
+      ^~~~~~~~
+In file included from test.c:5:0:
+exercises.c:47:9: error: unused variable 'elem' [-Werror=unused-variable]
+    int *elem; //puntero a los elementos que guardaremos
+         ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+58afaed
