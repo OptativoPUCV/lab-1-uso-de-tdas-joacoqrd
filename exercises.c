@@ -42,15 +42,14 @@ Al finalizar retorna la lista creada.
 */
 
 List* crea_lista() {
-   List* L = create_list();
+   List* L = create_list(); 
 
    int *elem; //puntero a los elementos que guardaremos
 
    first(L);
    for (int i = 0 ; i < 10 ; i++){ 
-      *elem = i + 1;
+      *elem = i;
       pushBack(L, &elem);
-      //usar pushback y first
    }
    return L;
 }
