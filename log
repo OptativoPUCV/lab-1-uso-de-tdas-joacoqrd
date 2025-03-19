@@ -77,3 +77,14 @@ exercises.c:47:9: error: unused variable 'elem' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 e0c6d3c
+Wed, Mar 19, 2025  9:09:55 AM: 
+ exercises.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+In file included from test.c:5:0:
+exercises.c: In function 'crea_lista':
+exercises.c:47:9: error: unused variable 'num' [-Werror=unused-variable]
+    int *num; //puntero a los elementos que guardaremos
+         ^~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+57122b9
