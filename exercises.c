@@ -48,7 +48,8 @@ List* crea_lista() {
 
    first(L);
    for (int i = 0 ; i < 10 ; i++){ 
-      pushBack(L, i);
+      int valor = i + 1;
+      pushBack(L, valor);
       //usar pushback y first
    }
    return L;
