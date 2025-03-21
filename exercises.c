@@ -135,22 +135,26 @@ int parentesisBalanceados(char *cadena) {
       *dato = parentesis;
       
       //caso de abre parentesis
-      if (parentesis == '('){
+      if (parentesis == '(' || parentesis == '{' || parentesis == '['){
          push (pila, dato);
       }
       
       else{
       //caso de cierre parentesis      
-         if (parentesis == ')' ){
+         if (parentesis == ')' || parentesis == '}' || parentesis == ']'){
             
             //si esta vacia la pila, no hay para juntar
             if(top(pila) == NULL){
                return 0;
             }
             
-            //si hay un abre parentesis, se puede juntar con el cierre parentesis y se quita ese abre 
-            pop(pila);
+            char* arriba = top(pila);
+            char apertura = *arriba;
+
+            if ((parentesis == ')' && apertura != '(') || (parentesis == '}' && apertura != '{') || (parentesis == ']' && apertura != '[')) {
+               return 0;
          }
+         pop(pila);
 
       }
 
