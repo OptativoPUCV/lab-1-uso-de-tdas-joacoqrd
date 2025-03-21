@@ -129,12 +129,9 @@ int parentesisBalanceados(char *cadena) {
    Stack* pila = create_stack();
 
    for (int i = 0 ; cadena[i] != '\0'; i++){
-      char* dato = (char *)malloc(sizeof(char));
       char parentesis = cadena[i];
-      *dato = parentesis;
-
       if (parentesis == '('){
-         push (pila, dato);
+         push (pila, (void *)&parentesis);
       }
       else{
          if (parentesis == ')'){
