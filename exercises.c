@@ -139,12 +139,12 @@ int parentesisBalanceados(char *cadena) {
       else{
          if (parentesis == ')'){
             if(top(pila) == NULL){
-               return 0;
+               return 1;
             }
             pop(pila);
          }
       }
    }
-   return 1;
+   return 0;
 }
 
