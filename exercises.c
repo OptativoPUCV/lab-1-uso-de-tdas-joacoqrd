@@ -111,6 +111,14 @@ void copia_pila(Stack* P1, Stack* P2) {
       pop(aux);
       datoPasar = top(aux);
    }
+
+   int* restaurar = top(P2);
+
+   while (restaurar != NULL){
+      push (P1, restaurar);
+      pop (P2);
+      restaurar = top(P2);
+   }
 }
 
 /*
