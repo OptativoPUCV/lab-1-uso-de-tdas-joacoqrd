@@ -129,23 +129,34 @@ int parentesisBalanceados(char *cadena) {
    Stack* pila = create_stack();
 
    for (int i = 0 ; cadena[i] != '\0'; i++){
+      
       char* dato = (char *)malloc(sizeof(char));
       char parentesis = cadena[i];
       *dato = parentesis;
-
+      
+      //caso de abre parentesis
       if (parentesis == '('){
          push (pila, dato);
       }
+      
       else{
-         if (parentesis == ')'){
+      //caso de cierre parentesis      
+         if (parentesis == ')' ){
+            
+            //si esta vacia la pila, no hay para juntar
             if(top(pila) == NULL){
                return 0;
             }
+            
+            //si hay un abre parentesis, se puede juntar con el cierre parentesis y se quita ese abre 
             pop(pila);
          }
+
       }
+
    }
 
+   //si esta vacia la pila significa que todos lograron juntarse y esta balanceado
    if (top(pila) == NULL){
       return 1;
    }
