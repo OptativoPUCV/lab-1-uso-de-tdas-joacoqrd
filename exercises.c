@@ -136,7 +136,7 @@ int parentesisBalanceados(char *cadena) {
       
       //caso de abre parentesis
       if (parentesis == '(' || parentesis == '{' || parentesis == '['){
-         push (pila, dato);
+         push (pila, *dato);
       }
       
       else{
