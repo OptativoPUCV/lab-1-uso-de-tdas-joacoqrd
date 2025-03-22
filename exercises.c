@@ -128,49 +128,50 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 int parentesisBalanceados(char *cadena) {
    Stack* pila = create_stack();
    int longitud = strlen(cadena);
+   
+
    if (longitud % 2 != 0) {
        return 0;
-  }
-
-   for (int i = 0 ; cadena[i] != '\0'; i++){
-      
-      char* dato = (char *)malloc(sizeof(char));
-      char parentesis = cadena[i];
-      *dato = parentesis;
-      
-      //caso de abre parentesis
-      if (dato == '(' || dato == '{' || dato == '['){
-         push (pila, dato);
-      }
-      
-      else{
-      //caso de cierre parentesis      
-         if (dato == ')' || dato == '}' || dato == ']'){
-            
-            //si esta vacia la pila, no hay para juntar
-            if(top(pila) == NULL){
-               return 0;
-            }
-            
-            char* arriba = (char *)pop(pila);
-            char apertura = *arriba;
-
-            if ((dato == ')' && apertura != '(') || (dato == '}' && apertura != '{') || (dato == ']' && apertura != '[')) {
-               return 0;
-         }
-         pop(pila);
-
-      }
-
    }
 
-   //si esta vacia la pila significa que todos lograron juntarse y esta balanceado
+   for (int i = 0; cadena[i] != '\0'; i++){
+      char parentesis = cadena[i];
+     
+      // Caso de apertura: guardar el carácter en la pila
+      if (parentesis == '(' || parentesis == '{' || parentesis == '['){
+        
+         char* dato = (char *)malloc(sizeof(char));
+         if (dato == NULL) {
+     
+            return 0;
+         }
+         *dato = parentesis;
+         push(pila, dato);
+      }
+      else if (parentesis == ')' || parentesis == '}' || parentesis == ']'){
+     
+         if(top(pila) == NULL){
+            return 0;
+         }
+         
+      
+         char* arriba = (char *)pop(pila);
+         char apertura = *arriba;
+
+
+         if ((parentesis == ')' && apertura != '(') ||
+             (parentesis == '}' && apertura != '{') ||
+             (parentesis == ']' && apertura != '[')) {
+            return 0;
+         }
+      }
+   }
+
    if (top(pila) == NULL){
       return 1;
    }
    else{
       return 0;
    }
-}
 }
 

@@ -856,3 +856,9 @@ exercises.c:175:1: error: control reaches end of non-void function [-Werror=retu
 cc1.exe: all warnings being treated as errors
 Compilation failed
 d1256d9
+Sat, Mar 22, 2025  7:57:54 PM: 
+ exercises.c | 28 +++++++++++++---------------
+ 1 file changed, 13 insertions(+), 15 deletions(-)
+ tests:  9|0
+total_score: 70/70
+09a494e
