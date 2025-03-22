@@ -139,13 +139,13 @@ int parentesisBalanceados(char *cadena) {
       *dato = parentesis;
       
       //caso de abre parentesis
-      if (dato == '(' || dato == '{' || dato == '['){
+      if (*dato == '(' || *dato == '{' || *dato == '['){
          push (pila, dato);
       }
       
       else{
       //caso de cierre parentesis      
-         if (dato == ')' || dato == '}' || dato == ']'){
+         if (*dato == ')' || *dato == '}' || *dato == ']'){
             
             //si esta vacia la pila, no hay para juntar
             if(top(pila) == NULL){
@@ -155,7 +155,7 @@ int parentesisBalanceados(char *cadena) {
             char* arriba = top(pila);
             char apertura = *arriba;
 
-            if ((dato == ')' && apertura != '(') || (dato == '}' && apertura != '{') || (dato == ']' && apertura != '[')) {
+            if ((*dato == ')' && apertura != '(') || (*dato == '}' && apertura != '{') || (*dato == ']' && apertura != '[')) {
                return 0;
          }
          pop(pila);
