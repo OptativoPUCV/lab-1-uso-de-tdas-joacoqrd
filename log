@@ -818,3 +818,41 @@ exercises.c:175:1: error: control reaches end of non-void function [-Werror=retu
 cc1.exe: all warnings being treated as errors
 Compilation failed
 4a88a2e
+Sat, Mar 22, 2025  7:54:16 PM: 
+ exercises.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+In file included from test.c:5:0:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:142:16: error: comparison between pointer and integer [-Werror]
+       if (dato == '(' || dato == '{' || dato == '['){
+                ^~
+exercises.c:142:31: error: comparison between pointer and integer [-Werror]
+       if (dato == '(' || dato == '{' || dato == '['){
+                               ^~
+exercises.c:142:46: error: comparison between pointer and integer [-Werror]
+       if (dato == '(' || dato == '{' || dato == '['){
+                                              ^~
+exercises.c:148:19: error: comparison between pointer and integer [-Werror]
+          if (dato == ')' || dato == '}' || dato == ']'){
+                   ^~
+exercises.c:148:34: error: comparison between pointer and integer [-Werror]
+          if (dato == ')' || dato == '}' || dato == ']'){
+                                  ^~
+exercises.c:148:49: error: comparison between pointer and integer [-Werror]
+          if (dato == ')' || dato == '}' || dato == ']'){
+                                                 ^~
+exercises.c:158:23: error: comparison between pointer and integer [-Werror]
+             if ((dato == ')' && apertura != '(') || (dato == '}' && apertura != '{') || (dato == ']' && apertura != '[')) {
+                       ^~
+exercises.c:158:59: error: comparison between pointer and integer [-Werror]
+             if ((dato == ')' && apertura != '(') || (dato == '}' && apertura != '{') || (dato == ']' && apertura != '[')) {
+                                                           ^~
+exercises.c:158:95: error: comparison between pointer and integer [-Werror]
+             if ((dato == ')' && apertura != '(') || (dato == '}' && apertura != '{') || (dato == ']' && apertura != '[')) {
+                                                                                               ^~
+exercises.c:175:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+d1256d9
