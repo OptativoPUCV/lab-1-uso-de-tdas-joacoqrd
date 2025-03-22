@@ -130,13 +130,13 @@ int parentesisBalanceados(char *cadena) {
 
    for (int i = 0 ; cadena[i] != '\0'; i++){
       
-      char* dato = (char *)malloc(sizeof(char));
+      //char* dato = (char *)malloc(sizeof(char));
       char parentesis = cadena[i];
-      *dato = parentesis;
+      //*dato = parentesis;
       
       //caso de abre parentesis
       if (parentesis == '(' || parentesis == '{' || parentesis == '['){
-         push (pila, *dato);
+         push (pila, parentesis);
       }
       
       else{
